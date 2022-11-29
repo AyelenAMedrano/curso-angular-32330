@@ -1,0 +1,15 @@
+<h1>Tarea 2</h1>
+<h3>Buscador de tutores de la comisión 32330 - Curso Angular:</h3>
+<p>
+    <label for="nombreApellido">Ingrese primer nombre y apellido: </label>
+    <input id="nombreApellido" [(ngModel)]="nombreApellido"/>
+</p>
+
+<button (click)="esTutor(nombreApellido)">Buscar</button>
+<div [ngClass]="unTutor ? 'tutor' : 'no-tutor'">{{mensaje}}</div>
+<div *ngIf="!unTutor"> 
+    Los unicos tutores para esta comisión son:
+    <ul>
+        <li *ngFor = "let tutor of tutores; index as i" >Tutor {{i+1}}: {{tutor}} </li>
+    </ul>
+</div>
