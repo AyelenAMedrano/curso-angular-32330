@@ -1,0 +1,25 @@
+ 
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+
+    <form [formGroup]="form">
+
+        <h3>Login Here</h3>
+
+        <label for="email" class="">E-mail</label>
+        <input type="text" formControlName="email" placeholder="Email" id="email">
+
+        <div *ngIf="form.controls['email']?.touched && !form.get('email')?.value && !form.controls['email'].valid">Email is required.</div>
+        <div *ngIf="form.controls['email']?.touched && !form.controls['email'].valid">Format not valid.</div>
+
+        <label for="password">Password</label>
+        <input type="password" formControlName="password" placeholder="Password" id="password">
+
+        <button type="submit">Log In</button>
+        <div class="social">
+          <div class="go"><i class="fab fa-google"></i>  Google</div>
+          <div class="fb"><i class="fab fa-facebook"></i>  Facebook</div>
+        </div>
+    </form>
